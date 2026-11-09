@@ -52,7 +52,8 @@ export interface PdfTranslatorApi {
   getModelStatus(): Promise<ModelStatus>;
   reloadModel(): Promise<void>;
   openModelFolder(): Promise<void>;
-  openExternal(link: 'model' | 'license'): Promise<void>;
+  openExternal(link: 'model'): Promise<void>;
+  openLicense(): Promise<void>;
   startTranslation(request: TranslationRequest): Promise<void>;
   cancelTranslation(): void;
   onModelStatus(callback: (status: ModelStatus) => void): Promise<() => void>;

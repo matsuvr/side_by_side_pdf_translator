@@ -35,7 +35,9 @@
     "resources": {
       "../LICENSE": "licenses/LICENSE",
       "../THIRD_PARTY_NOTICES.md": "licenses/THIRD_PARTY_NOTICES.md",
-      "../THIRD_PARTY_LICENSES.txt": "licenses/THIRD_PARTY_LICENSES.txt"
+      "../THIRD_PARTY_LICENSES.txt": "licenses/THIRD_PARTY_LICENSES.txt",
+      "../licenses/PLAMO_COMMUNITY_LICENSE-ja.txt": "licenses/PLAMO_COMMUNITY_LICENSE-ja.txt",
+      "../licenses/PLAMO_COMMUNITY_LICENSE-en.txt": "licenses/PLAMO_COMMUNITY_LICENSE-en.txt"
     },
     "icon": [
       "icons/32x32.png",

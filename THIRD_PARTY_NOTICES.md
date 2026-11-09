@@ -1,10 +1,18 @@
 # Third-party notices
 
-PLaMo PDF Translator is an independent application. Its own source is licensed under the [MIT License](LICENSE). The Windows installer includes this notice and [the dependency inventory and license texts](THIRD_PARTY_LICENSES.txt) in the `licenses` directory. Include these files when redistributing the executable separately.
+PLaMo PDF Translator is an independent application. Its own source is licensed under the [MIT License](LICENSE). The application's MIT License does not apply to the model weights. Application bundles include the application license, this notice, the dependency license texts and the full PLaMo Community License in their `licenses` resources directory. Release ZIPs also include readable copies beside the application. Preserve these documents when redistributing.
 
 ## Model
 
-PLaMo 3 Translate 0.8B is published by Preferred Networks under the PLaMo Community License. The repository and installer contain no model weights. The application opens the official download page for `plamo-3-translate-0.8b-Q4_K_M.gguf` on request. The model card describes the personal, non-commercial and commercial terms. [Model card](https://huggingface.co/pfnet/plamo-3-translate-0.8b-GGUF#license) · [Japanese license](https://plamo.preferredai.jp/info/plamo-community-license-ja) · [English license](https://plamo.preferredai.jp/info/plamo-community-license-en)
+Built with PLaMo
+
+Release ZIPs include the unmodified official `plamo-3-translate-0.8b-Q4_K_M.gguf` from Preferred Networks' `pfnet/plamo-3-translate-0.8b-GGUF` repository. Model weights are excluded from Git and are distributed only as release ZIP contents. The source build does not automatically download or bundle weights.
+
+The model is licensed separately under the PLaMo Community License. The complete Japanese and English agreements, revised November 9, 2026, are reproduced without modification in [Japanese](licenses/PLAMO_COMMUNITY_LICENSE-ja.txt), [English](licenses/PLAMO_COMMUNITY_LICENSE-en.txt), and [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt). The startup screen opens the local Japanese agreement without internet access. [Model and license provenance](licenses/README.md) · [Pinned model revision and SHA-256](licenses/plamo-model.json)
+
+Users must comply with the full agreement. Personal and non-commercial use, including academic use, is free without prior registration. Commercial use, including internal business use, requires prior PFN registration when the user or its affiliates' revenue or sales in the most recent fiscal year does not exceed JPY 1 billion; a separate commercial license is required above that threshold. Redistribution requires providing the agreement, requiring recipients to comply, and displaying “Built with PLaMo”; Article 4 also governs derived models and other applicable licenses. Article 5 covers attribution for substantial long-form publications of translations, models trained on outputs, and notices when providing outputs or datasets to third parties. The full agreement also sets age requirements, prohibited uses, responsibilities and warranty limitations. This summary does not replace the agreement.
+
+[Official model card](https://huggingface.co/pfnet/plamo-3-translate-0.8b-GGUF#license) · [PFN commercial registration](https://forms.gle/mTL8tBLrMYXKNZD56) · [Japanese license website](https://plamo.preferredai.jp/info/plamo-community-license-ja) · [English license website](https://plamo.preferredai.jp/info/plamo-community-license-en)
 
 ## Application dependencies
 

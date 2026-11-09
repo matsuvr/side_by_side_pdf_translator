@@ -1,0 +1,17 @@
+{
+  "repository": "pfnet/plamo-3-translate-0.8b-GGUF",
+  "revision": "1cf96ae02133958a20074bfdfab76517bb737d00",
+  "file": "plamo-3-translate-0.8b-Q4_K_M.gguf",
+  "size": 573126848,
+  "sha256": "70891ec70dc7ab4205745a38307867c2881b99239f20327927633abfe4bc9ec6",
+  "license": "PLaMo Community License",
+  "licenseRevisionDate": "2026-11-09",
+  "licenseFiles": {
+    "ja": "PLAMO_COMMUNITY_LICENSE-ja.txt",
+    "en": "PLAMO_COMMUNITY_LICENSE-en.txt"
+  },
+  "licenseSha256": {
+    "ja": "7dd74339bbf9a39fe33e271a89657aacf06f452b082fcb1273fb792b8d6b7db2",
+    "en": "ca0c5e90f6de6799fc2d2d4f2b2647cc088444c19f286f689e525d4ad28f9ed6"
+  }
+}

@@ -147,6 +147,18 @@ body {
   margin: 0;
 }
 
+.start-licenses {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.start-attribution {
+  font-weight: 600;
+}
+
 /* -------------------------------------------------------------- workspace */
 
 .workspace {

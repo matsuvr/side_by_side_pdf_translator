@@ -38,10 +38,29 @@ fn open_model_folder(state: State<'_, AppState>) -> Result<(), String> {
 fn open_external(link: String) -> Result<(), String> {
     let url = match link.as_str() {
         "model" => "https://huggingface.co/pfnet/plamo-3-translate-0.8b-GGUF/blob/main/plamo-3-translate-0.8b-Q4_K_M.gguf",
-        "license" => "https://plamo.preferredai.jp/info/plamo-community-license-ja",
         _ => return Err("Unknown model link".into()),
     };
     open::that(url).map_err(|error| error.to_string())
+}
+
+#[tauri::command]
+fn open_license(app: tauri::AppHandle) -> Result<(), String> {
+    let name = "PLAMO_COMMUNITY_LICENSE-ja.txt";
+    let mut dirs = Vec::new();
+    if let Ok(resources) = app.path().resource_dir() {
+        dirs.push(resources.join("licenses"));
+    }
+    dirs.push(translator::primary_search_dir().join("licenses"));
+    if cfg!(debug_assertions) {
+        let project = Path::new(env!("CARGO_MANIFEST_DIR")).parent().unwrap();
+        dirs.push(project.join("licenses"));
+    }
+    let path = dirs
+        .iter()
+        .map(|dir| dir.join(name))
+        .find(|path| path.is_file())
+        .ok_or_else(|| format!("同梱ライセンス文書が見つかりません: {name}"))?;
+    open::that(path).map_err(|error| error.to_string())
 }
 
 #[tauri::command]
@@ -97,6 +116,7 @@ pub fn run() {
             reload_model,
             open_model_folder,
             open_external,
+            open_license,
             start_translation,
             cancel_translation
         ])

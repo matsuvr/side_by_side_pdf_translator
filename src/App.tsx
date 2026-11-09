@@ -600,13 +600,13 @@ const TranslationFooter = memo(function TranslationFooter({
   return (
     <div className="translation-foot">
       <Icon icon="translate" size={13} />
-      <span>PLaMo 3 Translate 0.8B</span>
+      <span>Built with PLaMo</span>
       <Button
         variant="minimal"
         size="small"
         className="foot-link"
-        endIcon="share"
-        text="ライセンス"
+        endIcon="document"
+        text="PLaMoコミュニティライセンス契約（ローカル）"
         onClick={onOpenLicense}
       />
     </div>
@@ -828,7 +828,7 @@ export default function App() {
   }, [copyTranslation]);
 
   const openLicense = useCallback(() => {
-    void api.openExternal('license').catch((error) => setPdfError(String(error)));
+    void api.openLicense().catch((error) => setPdfError(String(error)));
   }, []);
 
   const openModelUrl = useCallback(() => {
@@ -1192,7 +1192,11 @@ export default function App() {
           <Text className="start-drop-hint">または PDF をドロップ</Text>
         </div>
         {modelBlocked && renderModelSetup()}
-        <Button variant="minimal" size="small" endIcon="share" text="モデルのライセンス" onClick={openLicense} />
+        <div className="start-licenses">
+          <Text className="start-attribution">Built with PLaMo</Text>
+          <Text className="start-drop-hint">PLaMo 3 Translate 0.8B · Preferred Networks</Text>
+          <Button variant="minimal" size="small" endIcon="document" text="PLaMoコミュニティライセンス契約（ローカル）" onClick={openLicense} />
+        </div>
       </div>
     </main>
   );

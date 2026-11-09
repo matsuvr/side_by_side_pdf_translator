@@ -33,6 +33,7 @@ export const api: PdfTranslatorApi = {
   reloadModel: () => invoke<void>('reload_model'),
   openModelFolder: () => invoke<void>('open_model_folder'),
   openExternal: (link) => invoke<void>('open_external', { link }),
+  openLicense: () => invoke<void>('open_license'),
   startTranslation: (request: TranslationRequest) => invoke<void>('start_translation', { request }),
   cancelTranslation: () => {
     void invoke('cancel_translation').catch(() => undefined);

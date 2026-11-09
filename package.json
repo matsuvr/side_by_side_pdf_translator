@@ -16,7 +16,8 @@
     "tauri": "tauri",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "cargo:check": "node scripts/msvc.mjs cargo check --manifest-path src-tauri/Cargo.toml",
-    "smoke": "node scripts/msvc.mjs cargo run --manifest-path src-tauri/Cargo.toml --example smoke --"
+    "smoke": "node scripts/msvc.mjs cargo run --manifest-path src-tauri/Cargo.toml --example smoke --",
+    "build:mac": "node scripts/msvc.mjs tauri build --bundles app --features metal"
   },
   "dependencies": {
     "@blueprintjs/core": "6.22.0",
