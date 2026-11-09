@@ -1,0 +1,40 @@
+[package]
+name = "plamo-pdf-translator"
+version = "0.1.0"
+description = "Offline PDF translator powered by PLaMo 3 Translate (GGUF) and llama.cpp"
+authors = ["PLaMo PDF Translator"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.90"
+default-run = "plamo-pdf-translator"
+
+[lib]
+name = "plamo_pdf_translator_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+llama-cpp-2 = "0.1.161"
+open = "5"
+tauri-plugin-single-instance = "2"
+
+[features]
+# Production builds serve the embedded frontend through Tauri's custom protocol.
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+# Build against CUDA (requires the CUDA Toolkit + a CUDA capable GPU).
+cuda = ["llama-cpp-2/cuda"]
+# Build against Vulkan (requires the Vulkan SDK).
+vulkan = ["llama-cpp-2/vulkan"]
+# Build against Metal (macOS only).
+metal = ["llama-cpp-2/metal"]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true

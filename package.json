@@ -1,0 +1,40 @@
+{
+  "name": "plamo-pdf-translator",
+  "version": "0.1.0",
+  "description": "Offline PDF translator powered by PLaMo 3 Translate (GGUF) and llama.cpp",
+  "private": true,
+  "packageManager": "pnpm@9.14.4",
+  "author": "PLaMo PDF Translator",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/msvc.mjs tauri dev",
+    "dev:renderer": "vite",
+    "build:renderer": "vite build",
+    "build": "node scripts/msvc.mjs tauri build",
+    "build:release": "node scripts/msvc.mjs tauri build --no-bundle",
+    "build:cuda": "node scripts/msvc.mjs tauri build --no-bundle --features cuda",
+    "tauri": "tauri",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "cargo:check": "node scripts/msvc.mjs cargo check --manifest-path src-tauri/Cargo.toml",
+    "smoke": "node scripts/msvc.mjs cargo run --manifest-path src-tauri/Cargo.toml --example smoke --"
+  },
+  "dependencies": {
+    "@blueprintjs/core": "6.22.0",
+    "@blueprintjs/icons": "6.15.0",
+    "@tauri-apps/api": "^2",
+    "pdfjs-dist": "6.5.438",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.6"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

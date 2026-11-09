@@ -1,0 +1,28 @@
+# Dependency caches and local build output
+node_modules/
+.pnpm-store/
+.pnpm-cache/
+.npm-cache/
+dist/
+build/
+target/
+/src-tauri/gen/
+
+# Model weights and local test documents
+*.[gG][gG][uU][fF]
+*.gguf.part
+*.pdf
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.log
+*.tsbuildinfo
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
